@@ -65,3 +65,9 @@ export function formatDate(date: Date): string {
     day: "numeric",
   })
 }
+
+/** Number of calendar days in the real month a roadmap Month label refers to. */
+export function calendarMonthLength(month: Month): number {
+  const start = MONTH_START[month]
+  return new Date(start.getFullYear(), start.getMonth() + 1, 0).getDate()
+}
